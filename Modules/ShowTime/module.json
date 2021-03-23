@@ -1,0 +1,13 @@
+{
+    "name": "ShowTime",
+    "alias": "showtime",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ShowTime\\Providers\\ShowTimeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

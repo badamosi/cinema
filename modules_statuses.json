@@ -1,0 +1,6 @@
+{
+    "Movie": true,
+    "Cinema": true,
+    "ShowTime": true,
+    "Auth": true
+}
