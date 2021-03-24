@@ -29,6 +29,9 @@ class ShowTimeController extends Controller
 
 
         $$showTime = ShowTime::create($input);
+
+        return response()->json(['data'=>$showTime, 'status'=>200, "message" => "Show Time Created Successfully!"]);
+
     }
 
     public function update(Request $request, $id)
@@ -43,12 +46,12 @@ class ShowTimeController extends Controller
 
         
         ShowTime::find($id)->update($input);
-
+        return response()->json(['status'=>200, "message" => "Update Successful!"]);
     }
 
     public function destroy($id)
     {
         ShowTime::find($id)->delete();
-        return response()->json(null, 204);
+        return response()->json(["status" => 204, "message" => "Update Successful!"]);
     }
 }

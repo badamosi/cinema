@@ -31,6 +31,8 @@ class MovieController extends Controller
                 $data['logo'] = $request->logo->move('companies/logo/', $fileName);
                 Movie::find($movie->id)->update($data);
             }
+
+        return response()->json(['data'=>$movie, 'status'=>200, "message" => "Operation Successful!"]);
     }
 
     public function update(Request $request, $id)
@@ -48,12 +50,14 @@ class MovieController extends Controller
                 $input['logo'] = $fileName;
             }
             Movie::find($id)->update($input);
+            return response()->json(['status'=>200, "message" => "Update Successful!"]);
 
     }
 
     public function destroy($id)
     {
         Movie::find($id)->delete();
-        return response()->json(null, 204);
+        return response()->json(["status" => 204, "message" => "Update Successful!"]);
+
     }
 }

@@ -26,7 +26,7 @@ class CinemaController extends Controller
 
         $cinama = Cinema::create($input);
     
-        return response()->json(['data'=>$cinama, 'status'=>200]);
+        return response()->json(['data'=>$cinama, 'status'=>200, "message" => "Operation Successful!"]);
     }
 
     public function update(Request $request, $id)
@@ -39,12 +39,12 @@ class CinemaController extends Controller
 
         Cinema::find($id)->update($input);
         
-        return response()->json(['data'=>$cinama, 'status'=>200]);
+        return response()->json(['data'=>$cinama, 'status'=>200, "message" => "Update Successful!"]);
     }
 
     public function destroy($id)
     {
         Cinema::find($id)->delete();
-        return response()->json(null, 204);
+        return response()->json(["status" => 204, "message" => "Update Successful!"]);
     }
 }
